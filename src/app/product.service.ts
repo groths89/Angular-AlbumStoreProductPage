@@ -7,14 +7,13 @@ import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class ProductService {
+  
   private _albumUrl: string = '../assets/album.json';
-  constructor(private _http: Http) {
-    
-  }
-  getAlbum( id : number):Observable<Album>{
-    return this._http.get(this._albumUrl).map((response)=>{
-      response.json();
-    });
+  
+  constructor(private _http: Http) { }
+  
+  getAlbum(id: number) {
+    return this._http.get(this._albumUrl).map((response)=>response.json());
   }
 }
 
